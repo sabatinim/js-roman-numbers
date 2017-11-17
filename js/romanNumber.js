@@ -37,19 +37,15 @@ class RomanNumber {
     from(decimal) {
 
         let romanNumberRepresentation = '';
-
         let reduction = decimal;
 
-        for (var i = 0; i < this.dictionary.length; i++) {
+        this.dictionary.forEach(function (dictionaryItem) {
 
-            const dictionaryItem = this.dictionary[i];
-            while(reductionIsZero(reduction, dictionaryItem.decimal))
-            {
+            while (reductionIsZero(reduction, dictionaryItem.decimal)) {
                 romanNumberRepresentation += dictionaryItem.roman;
                 reduction -= dictionaryItem.decimal;
             }
-
-        }
+        })
         return romanNumberRepresentation;
     }
 }
