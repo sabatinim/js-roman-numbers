@@ -1,7 +1,7 @@
 class RomanNumber {
 
     constructor() {
-        this.romans = [
+        this.dictionary = [
             {
                 decimal: 10,
                 romans: 'X'
@@ -33,12 +33,12 @@ class RomanNumber {
 
         var result = '';
 
-        for (var i = 0; i < this.romans.length; i++) {
+        for (var i = 0; i < this.dictionary.length; i++) {
 
-            while(decimal - this.romans[i].decimal>=0)
+            while(decimal - this.dictionary[i].decimal>=0)
             {
-                result += this.romans[i].romans;
-                decimal = decimal - this.romans[i].decimal;
+                result += this.dictionary[i].romans;
+                decimal = decimal - this.dictionary[i].decimal;
             }
 
         }
