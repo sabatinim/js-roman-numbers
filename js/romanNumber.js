@@ -1,13 +1,33 @@
 class RomanNumber {
 
+    constructor() {
+        this.romans = [
+            {
+                decimal: 10,
+                romans: 'X'
+            },
+            {
+                decimal: 5,
+                romans: 'V'
+            },
+            {
+                decimal: 1,
+                romans: 'I'
+            }
+        ];
+    }
+
+
     from(decimal) {
 
-        if(decimal==5)
-            return 'V';
-        if(decimal==10)
-            return 'X'
 
-        return 'I';
+        for (var i = 0; i < this.romans.length; i++) {
+            if (decimal == this.romans[i].decimal) {
+                return this.romans[i].romans;
+            }
+        }
+
+        return '';
     }
 
 }
