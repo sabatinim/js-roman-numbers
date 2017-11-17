@@ -1,47 +1,55 @@
+function reductionIsZero(reduction, dictionaryItemDecimal) {
+    return reduction - dictionaryItemDecimal >= 0;
+}
+
+
 class RomanNumber {
 
     constructor() {
         this.dictionary = [
             {
                 decimal: 10,
-                romans: 'X'
+                roman: 'X'
             },
             {
                 decimal: 5,
-                romans: 'V'
+                roman: 'V'
             },
             {
                 decimal: 4,
-                romans: 'IV'
+                roman: 'IV'
             },
             {
                 decimal: 3,
-                romans: 'III'
+                roman: 'III'
             },
             {
                 decimal: 2,
-                romans: 'II'
+                roman: 'II'
             },
             {
                 decimal: 1,
-                romans: 'I'
+                roman: 'I'
             }
         ];
     }
 
     from(decimal) {
 
-        var result = '';
+        let romanNumberRepresentation = '';
+
+        let reduction = decimal;
 
         for (var i = 0; i < this.dictionary.length; i++) {
 
-            while(decimal - this.dictionary[i].decimal>=0)
+            const dictionaryItem = this.dictionary[i];
+            while(reductionIsZero(reduction, dictionaryItem.decimal))
             {
-                result += this.dictionary[i].romans;
-                decimal = decimal - this.dictionary[i].decimal;
+                romanNumberRepresentation += dictionaryItem.roman;
+                reduction -= dictionaryItem.decimal;
             }
 
         }
-        return result;
+        return romanNumberRepresentation;
     }
 }
