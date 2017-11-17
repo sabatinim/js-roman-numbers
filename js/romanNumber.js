@@ -11,6 +11,14 @@ class RomanNumber {
                 romans: 'V'
             },
             {
+                decimal: 3,
+                romans: 'III'
+            },
+            {
+                decimal: 2,
+                romans: 'II'
+            },
+            {
                 decimal: 1,
                 romans: 'I'
             }
@@ -20,14 +28,18 @@ class RomanNumber {
 
     from(decimal) {
 
-
+        var result = '';
         for (var i = 0; i < this.romans.length; i++) {
-            if (decimal == this.romans[i].decimal) {
-                return this.romans[i].romans;
+
+            if(decimal - this.romans[i].decimal>=0)
+            {
+                result += this.romans[i].romans;
+                decimal = decimal - this.romans[i].decimal;
             }
+
         }
 
-        return '';
+        return result;
     }
 
 }

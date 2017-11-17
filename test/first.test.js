@@ -14,9 +14,13 @@ describe('roman number generator', function () {
         expect(new RomanNumber().from(10)).equal("X");
     });
 
-    // it('7 is VII', function () {
-    //     expect(new RomanNumber().from(7)).equal("X");
-    // });
+    it('7 is VII', function () {
+        expect(new RomanNumber().from(7)).equal("VII");
+    });
+
+    it('8 is VIII', function () {
+        expect(new RomanNumber().from(8)).equal("VIII");
+    });
 
 
 })
